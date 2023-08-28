@@ -22,3 +22,35 @@ diceButtonEl.addEventListener("click", function(){
    }
 }
 )
+
+//Chiedi all'utente la sua email, controlla che sia nella lista di chi può accedere, stampa un messaggio appropriato sull’esito del controllo. Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in pagina.
+
+const emailList = ["lucafranzoi98@gmail.com", "micheledifede98@gmail.com", "stefanbencina98@gmail.com"];
+const emailButtonEl = document.getElementById("email-button");
+const accessEl = document.querySelector(".access");
+
+
+emailButtonEl.addEventListener("click", function() {
+
+   accessEl.innerHTML = " ";
+
+   const emailInputEl = document.getElementById("email-input").value;
+   let j = 0;
+
+   for (let i = 0; i < emailList.length; i++) {
+   const emailUser = emailList[i];
+   
+   if (emailUser == emailInputEl) {
+      j = 1;
+   } else {
+
+   }
+   }
+
+   if (j == 1) {
+      accessEl.insertAdjacentHTML("beforeend", `<div>Accesso consentito!</div>`);
+   } else {
+      accessEl.insertAdjacentHTML("beforeend", `<div>Accesso negato!</div>`);
+   }
+   
+})
